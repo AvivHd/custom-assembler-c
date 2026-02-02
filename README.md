@@ -23,11 +23,12 @@ low-level programming, parsing, and careful memory management.
 ## Project Structure
 ```
 custom-assembler-c/
-├── src/ # Source files (.c)
 ├── include/ # Header files (.h)
-├── README.md
+├── src/ # Source files (.c)
+├── .gitignore
 ├── LICENSE
-└── .gitignore
+├── Makefile
+└── README.md 
 ```
 ---
 
