@@ -23,12 +23,14 @@ low-level programming, parsing, and careful memory management.
 ## Project Structure
 ```
 custom-assembler-c/
-├── include/ # Header files (.h)
-├── src/ # Source files (.c)
-├── .gitignore
-├── LICENSE
+├── include/                 # Header files (.h)
+├── src/                     # Source files (.c)
+├── examples/                # Example inputs and outputs
+│   ├── valid/
+│   ├── errors/
+│   └── outputs/
 ├── Makefile
-└── README.md 
+└── README.md
 ```
 ---
 
@@ -43,16 +45,34 @@ make
 ```
 
 ### Run
-To run the assembler on an assembly input file
+The assembler expects an input file with a `.as` extension.
 
 ```bash
-./assembler input.as
+./assembler examples/valid/simple.as
 ```
+
+If the input is valid, the assembler generates:
+- .am – preprocessed file
+- .ob – object file
+- .ent – entries file (if applicable)
+- .ext – externals file (if applicable)
+
 
 ### Clean
 To remove compiled files and the executable
 ```bash
 make clean
+```
+
+### Error handling
+- Files without a `.as` extension are rejected.
+- Syntax and semantic errors are reported with line numbers.
+- If an error occurs, no output files are generated.
+
+Example:
+
+```bash
+./assembler examples/errors/invalid_extension.txt
 ```
 
 ---
