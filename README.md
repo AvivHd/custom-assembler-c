@@ -1,4 +1,5 @@
 # Custom Assembler in C
+This repository is intended for demonstration and learning purposes.
 
 ## Overview
 This project implements a two-pass assembler written in C.
